@@ -4,7 +4,7 @@
 A compilation of the commands I've used the most (or rather, the ones I've saved) throughout my career in designing, configuring, and managing networks.
 
 
-## Network manufactures
+## Network manufacturers
 - [Juniper](Juniper.md)
 - [FortiGate](FortiGate.md)
 - [Huawei](Huawei.md)
