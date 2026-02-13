@@ -26,6 +26,9 @@ show configuration protocols lldp
 # Mostrar todas las interfaces caídas
 show interfaces terse ge-0/0/* | match down
 
+# Mostrar ciertas interfaces concatenando filtro match
+show interfaces terse | match "interface|0/6|0/7" 
+
 # Revertir cambios, o volver a una versión en concreto
 rollback
 rollback *n*
@@ -73,7 +76,7 @@ replace pattern xe-0/1/2 with xe-0/1/4
 set routing-options static route <dst/cidr> next-hop <IP>
 
 # Configurar una ruta estática IPv6
-set routing-options **rib inet6.0** static route ...
+set routing-options rib inet6.0 static route ...
 
 # Crear VLAN
 set vlans <nombre_VLAN> vlan-id <ID>
@@ -158,7 +161,7 @@ set member-range ge-0/[1-3]/*
 set unit 0 family ethernet-switching vlan members FINANCE
 
 # Mismo comando repetidamente (n) seg
-show bgp summary | **refresh 2**
+show bgp summary | refresh 2
 
 # Check who is logged on
 show system users
@@ -212,6 +215,7 @@ help topic vlans private-vlan-qfx
 # tip del día
 help tip cli
 
+
 ```
 
 ## Filtering output
@@ -219,13 +223,13 @@ help tip cli
 ```bash
 Possible completions:
 append               Append output text to file
-**count**                Count occurrences
-**display**              Show additional kinds of information
+count                Count occurrences
+display              Show additional kinds of information
 except               Show only text that does not match a pattern
-**find**                 Search for first occurrence of pattern
+find                 Search for first occurrence of pattern
 hold                 Hold text without exiting the --More-- prompt
 last                 Display end of output only
-**match**                Show only text that matches a pattern
+match                Show only text that matches a pattern
 no-more              Don't paginate output
 refresh              Refresh a continuous display of the command
 request              Make system-level requests
