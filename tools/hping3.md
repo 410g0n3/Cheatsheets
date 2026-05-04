@@ -9,8 +9,8 @@ packet crafter / TCP/IP tester (like ping but for TCP/UDP/ICMP)
 # Ping a destination with 4 ICMP ping requests:
 hping3 --icmp --count 4 ip_or_hostname
 
-# Ping an IP address over UDP on port 80:
-hping3 --udp --destport 80 --syn ip_or_hostname
+# Ping an IP address on port 80:
+hping3 --destport 80 --syn ip_or_hostname
 
 # Scan TCP port 80, scanning from the specific local source port 5090:
 hping3 --verbose --syn --destport 80 --baseport 5090 ip_or_hostname
